@@ -1,4 +1,131 @@
-@import './variabes/variables';
-@import './buttons/main_hover';
-@import './buttons/head_hover';
-@import './buttons/footer_input';
+@import './variables/variables';
+@import './components/shorts';
+.btn{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px 35px;
+    display: inline-flex;
+    border-radius: 30px;
+    position: relative;
+    transition: all .4s;    
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 1rem 2rem rgba(#000000,.2);
+
+        &::after {
+            transform: scaleX(1.4) scaleY(1.6);
+            opacity: 0;
+        }
+    }
+    &:active, &:focus{
+        outline: none;
+        transform: translateY(-1px);
+    }
+    &::after{
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+        background-color: inherit;
+    }
+    &-white{
+        background-color: #ffff;
+        color: $btn-bg-white-text;
+        &::after{
+            background-color: inherit;
+        }
+    }
+    &-green{
+        background-color: $btn-green;
+        color: #ffff;
+        &::after{
+            background-color: inherit;
+        }
+    }
+}
+
+.btn-text{
+        padding: 6px 2px;
+        background-color: transparent;
+        border-bottom: 1px solid $btn-green;
+        color: $btn-green;
+        transition: all .2s ease-out;
+        display: inline-block;
+    &:hover{
+        background-color: $btn-green;
+        color: #ffff;
+        transform: translateY(-2px);
+    }
+    &:focus, &:active{
+        outline: none;
+        transform: translateY(-1px);
+    }
+}
+
+.exiting-tours{
+    position: relative;
+    margin: 20px 10%;
+    &__image{
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: flex;
+        width: 28%;
+        transition: .2s ease;
+        outline-offset: 15px;
+        &_hover-2{
+            top: 3rem;
+            left: 25%;
+        }
+        &_hover-3{
+            top: 8rem;
+            left: 8%;
+        }
+
+        &_hover-1:hover{
+            z-index: 1;
+            transform: scale(1.1, 1.1);
+            outline: .9rem solid $btn-green;
+            box-shadow: 0 1rem 2rem rgba(#000000,.2);
+        }
+        &_hover-2:hover{
+            z-index: 1;
+            transform: scale(1.1, 1.1);
+            outline: .9rem solid $btn-green;
+            box-shadow: 0 1rem 2rem rgba(#000000,.2);
+        }
+        &_hover-3:hover{
+            z-index: 1;
+            transform: scale(1.1, 1.1);
+            outline: .9rem solid $btn-green;
+            box-shadow: 0 1rem 2rem rgba(#000000,.2);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
